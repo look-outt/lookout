@@ -3,12 +3,10 @@
   "builds": [
     {
       "src": "front_end/linkedout-pg1/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "front_end/linkedout-pg1/dist"
-      }
+      "use": "@vercel/static-build"
     }
   ],
+  "outputDirectory": "front_end/linkedout-pg1/dist",
   "routes": [
     {
       "handle": "filesystem"
