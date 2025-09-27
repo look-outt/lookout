@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "front_end/linkedout-pg1/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "buildCommand": "cd front_end/linkedout-pg1 && npm run build",
+  "installCommand": "cd front_end/linkedout-pg1 && npm install",
+  "outputDirectory": "front_end/linkedout-pg1/dist",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
