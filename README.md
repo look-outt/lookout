@@ -1,6 +1,6 @@
-# LookOut - AI-Powered LinkedIn Content Creation Platform
+# LookOut - AI-Powered Social Media Content Creation Platform
 
-LookOut is a comprehensive platform that helps users create engaging LinkedIn content with AI assistance. The platform features user registration, personalized onboarding, and an AI-powered chatbot for content creation.
+LookOut is a comprehensive platform that helps users create engaging social media content with AI assistance. The platform features user registration, personalized onboarding, and an AI-powered chatbot for content creation.
 
 ## 🚀 Quick Start
 
@@ -33,18 +33,18 @@ If you prefer to run services manually:
 #### 1. Install Dependencies
 ```bash
 # Install frontend dependencies
-cd "front end/LookOut-pg1"
+cd "front_end/lookout-pg1"
 npm install
 
 # Install backend dependencies
-cd server
+cd "front_end/lookout-pg1/backend"
 npm install
 cd ..
 ```
 
 #### 2. Start Services
 ```bash
-# From the frontend directory (front end/LookOut-pg1)
+# From the frontend directory (front_end/lookout-pg1)
 npm run start    # Starts both frontend and backend
 # OR
 npm run dev      # Frontend only
@@ -54,14 +54,14 @@ npm run server   # Backend only
 ## 📁 Project Structure
 
 ```
-LookOut-merge/
+lookout/
 ├── start.sh              # Launch script for macOS/Linux
 ├── start.bat             # Launch script for Windows
 ├── README.md             # This file
-└── front end/
-    └── LookOut-pg1/
+└── front_end/
+    └── lookout-pg1/
         ├── src/           # React frontend source
-        ├── server/        # Express backend
+        ├── backend/       # Express backend
         ├── package.json   # Frontend dependencies
         └── README.md      # Frontend-specific docs
 ```
@@ -76,7 +76,7 @@ LookOut-merge/
 ### AI-Powered Chatbot
 - Personalized content assistant (Ollie)
 - Context-aware responses based on user preferences
-- LinkedIn content generation and suggestions
+- Social media content generation and suggestions
 
 ### User Flow
 1. **Registration** → Create account with profile details
@@ -100,7 +100,7 @@ LookOut-merge/
 
 ### Available Scripts
 
-From `front end/LookOut-pg1/`:
+From `front_end/lookout-pg1/`:
 
 - `npm run dev` - Start frontend development server
 - `npm run build` - Build for production
