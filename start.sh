@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# LinkedOut - Frontend & Backend Launcher Script
-echo "🚀 LinkedOut Launcher"
+# LookOut - Frontend & Backend Launcher Script
+echo "🚀 LookOut Launcher"
 echo "===================="
 
 # Colors for output
@@ -13,8 +13,8 @@ NC='\033[0m' # No Color
 
 # Get the directory where the script is located
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-FRONTEND_DIR="$SCRIPT_DIR/front end/linkedout-pg1"
-BACKEND_DIR="$SCRIPT_DIR/front end/linkedout-pg1/server"
+FRONTEND_DIR="$SCRIPT_DIR/front_end/lookout-pg1"
+BACKEND_DIR="$SCRIPT_DIR/front_end/lookout-pg1/backend"
 
 echo -e "${BLUE}📁 Script directory: $SCRIPT_DIR${NC}"
 echo -e "${BLUE}🎨 Frontend directory: $FRONTEND_DIR${NC}"
@@ -78,7 +78,7 @@ install_backend_deps() {
 # Function to start the application
 start_app() {
     echo ""
-    echo -e "${BLUE}🎯 Starting LinkedOut Application...${NC}"
+    echo -e "${BLUE}🎯 Starting LookOut Application...${NC}"
     echo -e "${YELLOW}📝 Frontend will run on: http://localhost:3000${NC}"
     echo -e "${YELLOW}🔧 Backend will run on: http://localhost:3001${NC}"
     echo ""

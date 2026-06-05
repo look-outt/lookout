@@ -1,6 +1,6 @@
-# LinkedOut - AI-Powered LinkedIn Content Creation Platform
+# LookOut - AI-Powered LinkedIn Content Creation Platform
 
-LinkedOut is a comprehensive platform that helps users create engaging LinkedIn content with AI assistance. The platform features user registration, personalized onboarding, and an AI-powered chatbot for content creation.
+LookOut is a comprehensive platform that helps users create engaging LinkedIn content with AI assistance. The platform features user registration, personalized onboarding, and an AI-powered chatbot for content creation.
 
 ## 🚀 Quick Start
 
@@ -33,7 +33,7 @@ If you prefer to run services manually:
 #### 1. Install Dependencies
 ```bash
 # Install frontend dependencies
-cd "front end/linkedout-pg1"
+cd "front end/LookOut-pg1"
 npm install
 
 # Install backend dependencies
@@ -44,7 +44,7 @@ cd ..
 
 #### 2. Start Services
 ```bash
-# From the frontend directory (front end/linkedout-pg1)
+# From the frontend directory (front end/LookOut-pg1)
 npm run start    # Starts both frontend and backend
 # OR
 npm run dev      # Frontend only
@@ -54,12 +54,12 @@ npm run server   # Backend only
 ## 📁 Project Structure
 
 ```
-linkedout-merge/
+LookOut-merge/
 ├── start.sh              # Launch script for macOS/Linux
 ├── start.bat             # Launch script for Windows
 ├── README.md             # This file
 └── front end/
-    └── linkedout-pg1/
+    └── LookOut-pg1/
         ├── src/           # React frontend source
         ├── server/        # Express backend
         ├── package.json   # Frontend dependencies
@@ -100,7 +100,7 @@ linkedout-merge/
 
 ### Available Scripts
 
-From `front end/linkedout-pg1/`:
+From `front end/LookOut-pg1/`:
 
 - `npm run dev` - Start frontend development server
 - `npm run build` - Build for production
@@ -129,7 +129,7 @@ Backend runs on http://localhost:3001 with endpoints:
 
 ## 📝 License
 
-This project is part of the LinkedOut platform development.
+This project is part of the LookOut platform development.
 
 ---
 
