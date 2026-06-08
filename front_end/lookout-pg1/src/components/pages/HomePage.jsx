@@ -272,79 +272,8 @@ export default function HomePage() {
             </motion.div>
           </div>
 
-          {/* Right Side - Circular Image Carousel */}
-          <div className="flex flex-col items-center justify-center gap-10 lg:flex-row lg:gap-12">
-            <div className="flex flex-col items-center">
-              <motion.div
-                className="relative h-[220px] w-[220px] sm:h-[280px] sm:w-[280px] md:h-[360px] md:w-[360px] flex-shrink-0"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-              >
-                <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-primary/20 shadow-2xl">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={imageIndex}
-                      initial={{ opacity: 0, scale: 1.1 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.9 }}
-                      transition={{ duration: 0.8, ease: 'easeInOut' }}
-                      className="absolute inset-0"
-                    >
-                      <Image
-                        src={carouselImages[imageIndex]}
-                        alt={`Carousel image ${imageIndex + 1}`}
-                        className="h-full w-full object-cover"
-                      />
-                    </motion.div>
-                  </AnimatePresence>
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10" />
 
-                  <motion.div
-                    className="absolute inset-x-6 top-1/2 -translate-y-1/2 md:inset-x-10"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                  >
-                    <div className="relative flex items-center justify-between gap-3 rounded-full border border-white/20 bg-black/50 px-4 py-3 shadow-glow backdrop-blur-md md:px-6">
-                      <div className="flex items-center gap-2 text-sm text-white/90 md:text-base">
-                        <svg className="h-4 w-4 text-primary md:h-5 md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M3 5h18" />
-                          <path d="M7 3v4" />
-                          <path d="M17 3v4" />
-                          <rect x="3" y="5" width="18" height="14" rx="2" ry="2" />
-                        </svg>
-                        <span className="overflow-hidden text-ellipsis whitespace-nowrap">Write first post...</span>
-                      </div>
 
-                      <button
-                        className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-gradient-to-br from-primary to-primary-dark text-black shadow-md transition hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-primary/60 md:h-9 md:w-9"
-                        aria-label="Generate"
-                      >
-                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M5 12h14" />
-                          <path d="M12 5l7 7-7 7" />
-                        </svg>
-                      </button>
-
-                      <div className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-white/10" />
-                    </div>
-                  </motion.div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="mt-6 max-w-xl px-4 text-center text-base text-white/80 sm:text-lg"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-              >
-                <p className="leading-relaxed">
-                  The free content creation tool you always deserved. From freelancers to big businesses — create stunning, engaging content that boosts reach, captures attention, and delivers AI-driven insights.
-                </p>
-              </motion.div>
-            </div>
-          </div>
         </div>
 
         <div className="relative z-10 mt-16 space-y-8">
