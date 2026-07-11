@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "installCommand": "npm install --prefix \"lookout-frontend new/front_end/lookout-pg1\"",
+  "buildCommand": "npm run build --prefix \"lookout-frontend new/front_end/lookout-pg1\"",
+  "outputDirectory": "lookout-frontend new/front_end/lookout-pg1/dist",
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "/index.html" }
+  ]
+}
