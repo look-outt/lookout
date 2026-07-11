@@ -1,0 +1,127 @@
+/* home.css - HomePage-specific styles */
+/* This file contains only styles unique to the HomePage component */
+/* Global styles are inherited from community.css */
+
+/* ===== HomePage-Specific Animations ===== */
+
+/* 3D floating text effect for hero section */
+.float3d {
+  display: inline-block;
+  will-change: transform, text-shadow, filter;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.15),
+    0 2px 2px rgba(0,0,0,0.15),
+    0 6px 8px rgba(0,0,0,0.12);
+  transform: translate3d(-4px, 0, 0) rotate3d(0, 1, 0, -6deg);
+  animation: float3d 4.5s ease-in-out infinite;
+}
+
+.float3d--alt {
+  transform: translate3d(4px, 0, 0) rotate3d(0, 1, 0, 6deg);
+  animation: float3dAlt 5s ease-in-out infinite;
+}
+
+@keyframes float3d {
+  0%, 100% { transform: translate3d(-4px, 0, 0) rotate3d(0,1,0,-6deg); }
+  50%      { transform: translate3d(-4px, -2px, 0) rotate3d(0,1,0,-3deg); }
+}
+
+@keyframes float3dAlt {
+  0%, 100% { transform: translate3d(4px, 0, 0) rotate3d(0,1,0,6deg); }
+  50%      { transform: translate3d(4px, -2px, 0) rotate3d(0,1,0,3deg); }
+}
+
+/* CTA animated button effect */
+.cta-animated {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  color: #facc15;
+  transition: color 300ms ease;
+  z-index: 0;
+}
+
+.cta-animated::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: rgba(0,0,0,0.75);
+  border-radius: 9999px;
+  transform: translateX(110%);
+  transition: transform 400ms ease;
+  z-index: -1;
+}
+
+.cta-animated:hover {
+  color: white;
+}
+
+.cta-animated:hover::before {
+  transform: translateX(0);
+}
+
+/* Section spacing utility */
+.section-spacing {
+  padding-block: clamp(3.5rem, 6vw, 7rem);
+}
+
+/* Section divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(250, 204, 21, 0.3), transparent);
+  margin: 4rem 0;
+}
+
+/* Nura-style button */
+.btn-nura {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.btn-nura::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #facc15, #f59e0b, #facc15);
+  background-size: 200% 100%;
+  z-index: -1;
+  transition: all 0.3s ease;
+  animation: goldGradientShift 3s ease infinite;
+}
+
+.btn-nura:hover::before {
+  filter: brightness(1.1);
+}
+
+.btn-nura:active::before {
+  transform: scale(0.98);
+}
+
+@keyframes goldGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Utility classes specific to HomePage */
+.text-gold {
+  color: #facc15;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+  background-size: 200% 200%;
+  animation: goldGradientShift 5s ease infinite;
+}
+
+/* Shadow utilities for HomePage cards */
+.shadow-modern-lg {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(250, 204, 21, 0.1);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+}
