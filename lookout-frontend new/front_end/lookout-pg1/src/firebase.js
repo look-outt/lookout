@@ -6,12 +6,12 @@ import { initializeApp } from 'firebase/app';
 import {
   getAuth,
   GoogleAuthProvider,
-  signInWithPopup,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  sendPasswordResetEmail,
-  signOut,
-  onAuthStateChanged,
+  signInWithPopup as fbSignInWithPopup,
+  signInWithEmailAndPassword as fbSignInWithEmailAndPassword,
+  createUserWithEmailAndPassword as fbCreateUserWithEmailAndPassword,
+  sendPasswordResetEmail as fbSendPasswordResetEmail,
+  signOut as fbSignOut,
+  onAuthStateChanged as fbOnAuthStateChanged,
 } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -23,17 +23,69 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const googleProvider = new GoogleAuthProvider();
+const isFirebaseConfigured = !!firebaseConfig.apiKey;
 
-export {
-  signInWithPopup,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  sendPasswordResetEmail,
-  signOut,
-  onAuthStateChanged,
+let app;
+let auth;
+let googleProvider;
+
+if (isFirebaseConfigured) {
+  app = initializeApp(firebaseConfig);
+  auth = getAuth(app);
+  googleProvider = new GoogleAuthProvider();
+} else {
+  console.warn("WARNING: Firebase environment variables are missing. Authentication features will be disabled.");
+  app = null;
+  auth = {
+    currentUser: null,
+  };
+  googleProvider = {};
+}
+
+// Wrapper functions that check config state to avoid crashes
+export const onAuthStateChanged = (authInstance, callback) => {
+  if (isFirebaseConfigured) {
+    return fbOnAuthStateChanged(authInstance, callback);
+  } else {
+    // Firebase is not configured; trigger callback immediately with null user
+    callback(null);
+    return () => {};
+  }
 };
 
+export const signInWithPopup = async (authInstance, provider) => {
+  if (isFirebaseConfigured) {
+    return fbSignInWithPopup(authInstance, provider);
+  }
+  throw new Error("Authentication is not configured. Please add Firebase variables to Vercel.");
+};
+
+export const signInWithEmailAndPassword = async (authInstance, email, password) => {
+  if (isFirebaseConfigured) {
+    return fbSignInWithEmailAndPassword(authInstance, email, password);
+  }
+  throw new Error("Authentication is not configured. Please add Firebase variables to Vercel.");
+};
+
+export const createUserWithEmailAndPassword = async (authInstance, email, password) => {
+  if (isFirebaseConfigured) {
+    return fbCreateUserWithEmailAndPassword(authInstance, email, password);
+  }
+  throw new Error("Authentication is not configured. Please add Firebase variables to Vercel.");
+};
+
+export const sendPasswordResetEmail = async (authInstance, email) => {
+  if (isFirebaseConfigured) {
+    return fbSendPasswordResetEmail(authInstance, email);
+  }
+  throw new Error("Authentication is not configured. Please add Firebase variables to Vercel.");
+};
+
+export const signOut = async (authInstance) => {
+  if (isFirebaseConfigured) {
+    return fbSignOut(authInstance);
+  }
+};
+
+export { auth, googleProvider };
 export default app;
