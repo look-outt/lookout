@@ -124,7 +124,8 @@ export default function ChatPage() {
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, botMessage]);
-    } catch {
+    } catch (err) {
+      console.error('Error generating AI post content:', err);
       setMessages((prev) => [...prev, {
         id: Date.now() + 1,
         content: "I'm sorry, I encountered an issue. What kind of LinkedIn post are you looking to create?",
