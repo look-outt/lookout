@@ -24,8 +24,12 @@ origins_env = os.environ.get("CORS_ALLOWED_ORIGINS", "")
 if origins_env:
     allowlisted = [o.strip() for o in origins_env.split(",") if o.strip()]
 else:
-    # Default to localhost for development
-    allowlisted = ["http://localhost:5173", "http://localhost:3000"]
+    # Default to localhost for development + production Vercel URL
+    allowlisted = [
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "https://lookoutt.vercel.app",
+    ]
 
 app.add_middleware(
     CORSMiddleware,
