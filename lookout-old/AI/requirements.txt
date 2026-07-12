@@ -4,7 +4,7 @@ pydantic==2.12.5
 langchain==0.1.16
 langchain-openai==0.1.4
 langchain-community==0.0.34
-faiss-cpu==1.8.0.post1
+faiss-cpu==1.14.3
 python-dotenv==1.0.0
 openai==1.109.1
 tiktoken==0.5.2
